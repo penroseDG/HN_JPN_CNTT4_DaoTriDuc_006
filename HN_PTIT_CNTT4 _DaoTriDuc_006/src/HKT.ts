@@ -155,6 +155,10 @@ class Cinema {
     calculateTotalRevenue(): number {
        return this.bookings.reduce((total, booking) => total + booking.totalPrice, 0);
     }
+    getMovieSpecialOffers(movieId: number): string[] | undefined {
+        const movie = this.findMovieById(this.movies, movieId);
+        return movie.getSpecialOffers();
+    }
 }
 const cinema = new Cinema();
 
@@ -197,4 +201,7 @@ console.log("\n Tổng doanh thu:", cinema.calculateTotalRevenue());
 const foundAudience = cinema.findAudienceById(cinema.audiences, 1);
 console.log("\n Tìm khách hàng 1:", foundAudience.getDetails());
 
-
+// 10. Hiển thị ưu đãi của 1 phim 
+console.log("\n  Ưu đãi phim 2:", cinema.getMovieSpecialOffers(1));
+console.log("\n  Ưu đãi phim 2:", cinema.getMovieSpecialOffers(2));
+console.log("\n  Ưu đãi phim 2:", cinema.getMovieSpecialOffers(3));
