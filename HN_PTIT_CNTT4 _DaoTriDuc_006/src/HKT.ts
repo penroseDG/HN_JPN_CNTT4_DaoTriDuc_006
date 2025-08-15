@@ -195,5 +195,6 @@ console.log("\n Tổng doanh thu:", cinema.calculateTotalRevenue());
 
 // 9. Tìm kiếm thông tin khán giả theo ID:
 const foundAudience = cinema.findAudienceById(cinema.audiences, 1);
-console.log("\n Tìm khán giả #1:", foundAudience.getDetails());
+console.log("\n Tìm khách hàng 1:", foundAudience.getDetails());
+
 
